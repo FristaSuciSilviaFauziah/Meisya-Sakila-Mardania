@@ -1,56 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frista Birthday</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#ffdce8,#ffeef4);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:420px;
+}
+
+.card{
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    border-radius:28px;
+    padding:35px 25px;
+    margin-bottom:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(255,105,180,0.15);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(255,105,180,0.25);
+}
+
+.title{
+    font-size:30px;
+    font-weight:700;
+    color:#ff4f8b;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#555;
+    font-size:15px;
+}
+
+.section-title{
+    font-size:22px;
+    font-weight:600;
+    color:#ff4f8b;
+    margin-bottom:15px;
+}
+
+.info{
+    margin:18px 0;
+}
+
+.info h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:6px;
+}
+
+.info p{
+    color:#666;
+    font-size:15px;
+}
+
+.maps-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:12px 22px;
+    background:linear-gradient(135deg,#ff5f9e,#ff8fb8);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.maps-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 6px 18px rgba(255,105,180,0.4);
+}
+
+.emoji{
+    animation:float 2s infinite ease-in-out;
+    display:inline-block;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-5px);}
+    100%{transform:translateY(0);}
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- Opening -->
-<div class="opening" id="opening">
-  <h1>🎉 Birthday Party 🎉</h1>
-  <p>Special Day for Meisya</p>
-  <button onclick="openInvite()">Open Invitation</button>
-</div>
+<div class="container">
 
-<!-- Main Content -->
-<div class="container hidden" id="main">
+    <div class="card">
+        <div class="title">
+            You're Invited <span class="emoji">💖</span>
+        </div>
 
-  <section class="card fade">
-    <h2>You're Invited 💌</h2>
-    <p>Join my birthday party!</p>
-  </section>
-
-  <section class="card fade">
-    <h3>📅 Date</h3>
-    <p>27 May 2026</p>
-    <h3>📍 Location</h3>
-    <p>My Sweet Party Place</p>
-  </section>
-
-  <section class="card fade">
-    <h3>Gallery 📸</h3>
-    <div class="gallery">
-      <img src="https://picsum.photos/300/200?1">
-      <img src="https://picsum.photos/300/200?2">
-      <img src="https://picsum.photos/300/200?3">
+        <div class="subtitle">
+            Join my sweet birthday party!
+        </div>
     </div>
-  </section>
 
-  <section class="card fade">
-    <h3>Message 💖</h3>
-    <p>Hope you can come and celebrate this special day with me ✨</p>
-  </section>
+    <div class="card">
+
+        <div class="info">
+            <h3>📅 Date</h3>
+            <p>27 May 2026</p>
+        </div>
+
+        <div class="info">
+            <h3>📍 Location</h3>
+            <p>My Sweet Party Place</p>
+        </div>
+
+        <!-- GANTI LINK MAPS DI BAWAH -->
+        <a 
+        href="https://maps.app.goo.gl/cKjVwn7Qo37z13fY8https://maps.app.goo.gl/cKjVwn7Qo37z13fY8" 
+        target="_blank"
+        class="maps-btn">
+            Open Maps 💌
+        </a>
+
+    </div>
 
 </div>
 
-<!-- Musik -->
-<audio id="music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script src="script.js"></script>
 </body>
 </html>
