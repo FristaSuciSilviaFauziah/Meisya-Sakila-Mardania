@@ -24,6 +24,7 @@ body{
     justify-content:center;
     align-items:center;
     padding:20px;
+    overflow:hidden;
 }
 
 .container{
@@ -59,13 +60,6 @@ body{
     font-size:15px;
 }
 
-.section-title{
-    font-size:22px;
-    font-weight:600;
-    color:#ff4f8b;
-    margin-bottom:15px;
-}
-
 .info{
     margin:18px 0;
 }
@@ -96,6 +90,18 @@ body{
 .maps-btn:hover{
     transform:scale(1.05);
     box-shadow:0 6px 18px rgba(255,105,180,0.4);
+}
+
+.music-btn{
+    margin-top:18px;
+    border:none;
+    padding:10px 18px;
+    border-radius:50px;
+    background:white;
+    color:#ff4f8b;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
 .emoji{
@@ -138,17 +144,49 @@ body{
             <p>My Sweet Party Place</p>
         </div>
 
-        <!-- GANTI LINK MAPS DI BAWAH -->
+        <!-- LINK MAPS -->
         <a 
-        href="https://maps.app.goo.gl/cKjVwn7Qo37z13fY8https://maps.app.goo.gl/cKjVwn7Qo37z13fY8" 
+        href="https://maps.app.goo.gl/cKjVwn7Qo37z13fY8"
         target="_blank"
         class="maps-btn">
             Open Maps 💌
         </a>
 
+        <br>
+
+        <!-- TOMBOL MUSIC -->
+        <button class="music-btn" onclick="toggleMusic()">
+            🎵 Play Music
+        </button>
+
     </div>
 
 </div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+    <source src="backsound.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const music = document.getElementById("bgMusic");
+
+window.addEventListener('click', () => {
+    music.play();
+}, { once:true });
+
+function toggleMusic(){
+
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+
+}
+
+</script>
 
 </body>
 </html>
